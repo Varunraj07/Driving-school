@@ -66,7 +66,7 @@ public class Admin {
 public static void deleteVoter() throws SQLException{
 	Scanner sc=new Scanner(System.in);
 	System.out.println("Enter ID to Delete the voter from list");
-	int num=sc.nextInt();
+	
 	Connection con=null;
 	Statement st=null;
 	int rs=0;
@@ -76,7 +76,7 @@ public static void deleteVoter() throws SQLException{
 		st=con.createStatement();
 
 		//rs=st.executeQuery("grant create any table to hr");
-		rs=st.executeUpdate("delete voter where id=num");
+		rs=st.executeUpdate("delete voter where id=?");
 		System.out.println(rs);
 	} catch (ClassNotFoundException | SQLException e) {
 		// TODO Auto-generated catch block
